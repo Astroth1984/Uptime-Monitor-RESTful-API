@@ -24,7 +24,10 @@ var server = http.createServer((req, res) => {
     var queryStringObject = parsedUrl.query;
 
     // Get the HTTP method
-    var method = req.method.toLocaleLowerCase();
+    var method = req.method.toLowerCase();
+
+    // Get the Headers as an Object
+    var headers = req.headers;
 
     // Send the response
     res.end('Hello World!\n');
