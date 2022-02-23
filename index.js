@@ -10,6 +10,14 @@ var url = require('url');
 var StringDecoder = require('string_decoder').StringDecoder;
 var config = require('./config');
 var fs = require('fs');
+var _data = require('./lib/data');
+
+
+// TESTING
+// @TODO delete this
+_data.delete('test', 'File', (err) => {
+    console.log('this was the thrown error ', err);
+});
 
 // Instantiate the HTTP Server
 var httpServer = http.createServer(function(req, res) {
