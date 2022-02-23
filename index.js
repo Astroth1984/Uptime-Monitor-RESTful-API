@@ -42,7 +42,7 @@ httpsServer.listen(config.httpsPort, function() {
 });
 
 // All the logic for both http and https server
-var unifiedServer = function(res, req) {
+var unifiedServer = function(req, res) {
     // Get the URL and parse it
     /*
      * true : To call Query String module
@@ -127,10 +127,10 @@ var unifiedServer = function(res, req) {
 // Define all the handlers
 var handlers = {};
 
-// Sample handler
-handlers.sample = function(data, callback) {
-    callback(406, { 'name': 'sample handler' });
-};
+// Ping handler
+handlers.ping = function(data, callback) {
+    callback(200);
+}
 
 // Not found handler
 handlers.notFound = function(data, callback) {
@@ -139,5 +139,5 @@ handlers.notFound = function(data, callback) {
 
 // Define the request router
 var router = {
-    'sample': handlers.sample
+    'ping': handlers.ping
 };
