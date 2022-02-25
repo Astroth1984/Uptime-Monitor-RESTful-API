@@ -3,5 +3,6 @@
     "lastName": "test",
     "phone": "6666666666",
     "hashedPassword": "6d05947d64c6c09d2d11209a74b58f181f3f6c4b02269f16dc371bf2b261ccce",
-    "tosAgreement": true
+    "tosAgreement": true,
+    "checks": ["5dxwf0tgolct9xlh1hpt", "yw78i3345xss0a09la4s"]
 }
