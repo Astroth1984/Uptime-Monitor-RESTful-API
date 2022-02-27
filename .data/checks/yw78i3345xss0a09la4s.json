@@ -1,1 +1,9 @@
-{"id":"yw78i3345xss0a09la4s","userPhone":"6666666666","protocol":"http","url":"google.com","method":"post","successCodes":[200,201],"timeoutSeconds":3}
+{
+    "id": "yw78i3345xss0a09la4s",
+    "userPhone": "6666666666",
+    "protocol": "http",
+    "url": "google.com",
+    "method": "post",
+    "successCodes": [200, 201],
+    "timeoutSeconds": 3
+}
