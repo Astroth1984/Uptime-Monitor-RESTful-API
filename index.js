@@ -14,6 +14,14 @@ var handlers = require('./lib/handlers');
 var helpers = require('./lib/helpers');
 
 
+/**
+ * @TODO Test the sending SMS, Delete after test
+ */
+helpers.sendTwilioSms('4158375309', 'This is a testing MSG message', function(err) {
+    console.log('this is the error: ', err);
+});
+
+
 
 
 // Instantiate the HTTP Server
