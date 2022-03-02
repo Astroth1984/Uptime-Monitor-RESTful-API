@@ -117,54 +117,69 @@ app.logUserOut = function() {
 // Bind the forms
 app.bindForms = function() {
     if (document.querySelector("form")) {
-        document.querySelector("form").addEventListener("submit", function(e) {
 
-            // Stop it from submitting
-            e.preventDefault();
-            var formId = this.id;
-            var path = this.action;
-            var method = this.method.toUpperCase();
+        var allForms = document.querySelectorAll("form");
+        for (var i = 0; i < allForms.length; i++) {
+            allForms[i].addEventListener("submit", function(e) {
 
-            // Hide the error message (if it's currently shown due to a previous error)
-            document.querySelector("#" + formId + " .formError").style.display = 'hidden';
+                // Stop it from submitting
+                e.preventDefault();
+                var formId = this.id;
+                var path = this.action;
+                var method = this.method.toUpperCase();
 
-            // Turn the inputs into a payload
-            var payload = {};
-            var elements = this.elements;
-            for (var i = 0; i < elements.length; i++) {
-                if (elements[i].type !== 'submit') {
-                    var valueOfElement = elements[i].type == 'checkbox' ? elements[i].checked : elements[i].value;
-                    payload[elements[i].name] = valueOfElement;
+                // Hide the error message (if it's currently shown due to a previous error)
+                document.querySelector("#" + formId + " .formError").style.display = 'none';
+
+                // Hide the success message (if it's currently shown due to a previous error)
+                if (document.querySelector("#" + formId + " .formSuccess")) {
+                    document.querySelector("#" + formId + " .formSuccess").style.display = 'none';
                 }
-            }
 
-            // Call the API
-            app.client.request(undefined, path, method, undefined, payload, function(statusCode, responsePayload) {
-                // Display an error on the form if needed
-                if (statusCode !== 200) {
 
-                    if (statusCode == 403) {
-                        // log the user out
-                        app.logUserOut();
+                // Turn the inputs into a payload
+                var payload = {};
+                var elements = this.elements;
+                for (var i = 0; i < elements.length; i++) {
+                    if (elements[i].type !== 'submit') {
+                        var valueOfElement = elements[i].type == 'checkbox' ? elements[i].checked : elements[i].value;
+                        if (elements[i].name == '_method') {
+                            method = valueOfElement;
+                        } else {
+                            payload[elements[i].name] = valueOfElement;
+                        }
 
-                    } else {
-
-                        // Try to get the error from the api, or set a default error message
-                        var error = typeof(responsePayload.Error) == 'string' ? responsePayload.Error : 'An error has occured, please try again';
-
-                        // Set the formError field with the error text
-                        document.querySelector("#" + formId + " .formError").innerHTML = error;
-
-                        // Show (unhide) the form error field on the form
-                        document.querySelector("#" + formId + " .formError").style.display = 'block';
                     }
-                } else {
-                    // If successful, send to form response processor
-                    app.formResponseProcessor(formId, payload, responsePayload);
                 }
 
+                // Call the API
+                app.client.request(undefined, path, method, undefined, payload, function(statusCode, responsePayload) {
+                    // Display an error on the form if needed
+                    if (statusCode !== 200) {
+
+                        if (statusCode == 403) {
+                            // log the user out
+                            app.logUserOut();
+
+                        } else {
+
+                            // Try to get the error from the api, or set a default error message
+                            var error = typeof(responsePayload.Error) == 'string' ? responsePayload.Error : 'An error has occured, please try again';
+
+                            // Set the formError field with the error text
+                            document.querySelector("#" + formId + " .formError").innerHTML = error;
+
+                            // Show (unhide) the form error field on the form
+                            document.querySelector("#" + formId + " .formError").style.display = 'block';
+                        }
+                    } else {
+                        // If successful, send to form response processor
+                        app.formResponseProcessor(formId, payload, responsePayload);
+                    }
+
+                });
             });
-        });
+        }
     }
 };
 
@@ -201,6 +216,13 @@ app.formResponseProcessor = function(formId, requestPayload, responsePayload) {
         app.setSessionToken(responsePayload);
         window.location = '/checks/all';
     }
+
+    // If forms saved successfully and they have success messages, show them
+    var formsWithSuccessMessages = ['accountEdit1', 'accountEdit2'];
+    if (formsWithSuccessMessages.indexOf(formId) > -1) {
+        document.querySelector("#" + formId + " .formSuccess").style.display = 'block';
+    }
+
 };
 
 // Get the session token from localstorage and set it in the app.config object
@@ -279,6 +301,53 @@ app.renewToken = function(callback) {
     }
 };
 
+// Load data on the page
+app.loadDataOnPage = function() {
+    // Get the current page from the body class
+    var bodyClasses = document.querySelector("body").classList;
+    var primaryClass = typeof(bodyClasses[0]) == 'string' ? bodyClasses[0] : false;
+
+    // Logic for account settings page
+    if (primaryClass == 'accountEdit') {
+        app.loadAccountEditPage();
+    }
+};
+
+// Load the account edit page specifically
+app.loadAccountEditPage = function() {
+    // Get the phone number from the current token, or log the user out if none is there
+    var phone = typeof(app.config.sessionToken.phone) == 'string' ? app.config.sessionToken.phone : false;
+    if (phone) {
+        // Fetch the user data
+        var queryStringObject = {
+            'phone': phone
+        };
+        app.client.request(undefined, 'api/users', 'GET', queryStringObject, undefined, function(statusCode, responsePayload) {
+            if (statusCode == 200) {
+                // Put the data into the forms as values where needed
+                document.querySelector("#accountEdit1 .firstNameInput").value = responsePayload.firstName;
+                document.querySelector("#accountEdit1 .lastNameInput").value = responsePayload.lastName;
+                document.querySelector("#accountEdit1 .displayPhoneInput").value = responsePayload.phone;
+
+                // Put the hidden phone field into both forms
+                var hiddenPhoneInputs = document.querySelectorAll("input.hiddenPhoneNumberInput");
+                for (var i = 0; i < hiddenPhoneInputs.length; i++) {
+                    hiddenPhoneInputs[i].value = responsePayload.phone;
+                }
+
+            } else {
+                // If the request comes back as something other than 200, log the user our (on the assumption that the api is temporarily down or the users token is bad)
+                app.logUserOut();
+            }
+        });
+    } else {
+        app.logUserOut();
+    }
+
+
+
+};
+
 // Loop to renew token often
 app.tokenRenewalLoop = function() {
     setInterval(function() {
@@ -304,6 +373,9 @@ app.init = function() {
 
     // Renew token
     app.tokenRenewalLoop();
+
+    // Load data on page
+    app.loadDataOnPage();
 
 };
 
