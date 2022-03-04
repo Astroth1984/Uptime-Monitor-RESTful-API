@@ -92,12 +92,25 @@ _app.runTests = function() {
 
 // Produce a test outcome Report
 _app.produceTestReport = function(limit, successes, errors) {
+    var spacesLimit = '';
+    var spacesFail = '';
+    var spacesPass = '';
+    for (var j = 0; j < successes; j++) {
+        spacesPass += ' ';
+    }
+    for (var k = 0; k < limit; k++) {
+        spacesLimit += ' ';
+    }
+    for (var l = 0; l < errors.length; l++) {
+        spacesFail += ' ';
+    }
+
     console.log('');
     console.log('\x1b[35m%s\x1b[0m', '=================================== BEGIN TEST REPORT ===============================');
     console.log('');
-    console.log('\x1b[45m%s\x1b[0m', 'Total Tests: ', limit);
-    console.log('\x1b[42m%s\x1b[0m', 'Pass: ', successes);
-    console.log('\x1b[41m%s\x1b[0m', 'Fail: ', errors.length);
+    console.log('\x1b[45m%s\x1b[0m', 'Total Tests:' + spacesLimit + '', limit);
+    console.log('\x1b[42m%s\x1b[0m', 'Pass:' + spacesPass + '', successes);
+    console.log('\x1b[41m%s\x1b[0m', 'Fail:' + spacesFail + '', errors.length);
     console.log('');
 
     // If there are Errors print them in Details
