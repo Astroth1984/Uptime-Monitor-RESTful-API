@@ -2,6 +2,8 @@
 
 ## Description :
 
+The Uptime Monitoring Application is developped with Node.js and the built-in libraries, with no npm dependencies, nor external APIs. The use cases of the project are like follow:
+
 - 1. The API listens on a PORT and accepts incoming HTTP requests for POST, GET, PUT, DELETE, and HEAD.
 - 2. The API allows a client to connect, then create a new user, then edit ort delete that user.
 - 3. The API allows a user to "sign in" which gives them a token that they can use subsequent authenticated requests.
