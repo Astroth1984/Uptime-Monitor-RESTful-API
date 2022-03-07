@@ -2,7 +2,10 @@
 
 ## Description :
 
-##### The Uptime Monitoring Application is developped with Node.js and the built-in libraries, with no npm dependencies, nor external APIs. The use cases of the project are like follow:
+##### The Uptime Monitoring Application is developped with Node.js and the built-in libraries, with no npm dependencies, nor external APIs. This project was built using two main patterns : 
+##### - Event Handling Paradigm
+##### - Nodeks Callback Pattern
+##### The use cases of the project are like follow:
 
 - 1. The API listens on a PORT and accepts incoming HTTP requests for POST, GET, PUT, DELETE, and HEAD.
 - 2. The API allows a client to connect, then create a new user, then edit ort delete that user.
@@ -304,6 +307,26 @@ helpers.createRandomString = function(strLength) {
         return false;
     }
 }
+````
+
+And then Verify the validation of the token with each Request sent to the server
+
+````javascript
+handlers._tokens.verifyToken = function(id, phone, callback) {
+    // Lookup the token
+    _data.read('tokens', id, function(err, tokenData) {
+        if (!err && tokenData) {
+            // Check that the token is for the given user and has not expired
+            if (tokenData.phone == phone && tokenData.expires > Date.now()) {
+                callback(true);
+            } else {
+                callback(false);
+            }
+        } else {
+            callback(false);
+        }
+    });
+};
 ````
 
 
