@@ -275,6 +275,8 @@ This type of handlers, serve or handle Json payload, according to the called ser
 
 Those handlers render HTML-Content, and their use will be shown in **Building the App GUI**.
 
+For more details about the handlers, check the [handlers.js](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/lib/handlers.js) file.
+
 
 
 
