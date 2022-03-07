@@ -86,3 +86,28 @@ server.httpsServer.listen(config.httpsPort, function() {
     });
 ````
 
+### Setting up Diffrent dev Envirenments
+
+We have defined three diffrent envirenments in [config.js](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/lib/config.js), the staging, production and testing envirenment, each one of them runs on diffrent port, to split the contexte usage of each one :
+
+````json
+environments.staging = {
+    'httpPort': 3000,
+    'httpsPort': 3001,
+    'envName': 'staging',
+    'hashingSecret': 'thisIsASecret',
+    'maxChecks': 5,
+    'twilio': {
+        'accountSid': 'ACb32d411ad7fe886aac54c665d25e5c5d',
+        'authToken': '9455e3eb3109edc12e3d8c92768f7a67',
+        'fromPhone': '+15005550006'
+    },
+    'templateGlobals': {
+        'appName': 'UptimeChecker',
+        'companyName': 'Astroth1984-Company, Inc.',
+        'yearCreated': '2022',
+        'baseUrl': 'http://localhost:3000/'
+    }
+};
+````
+
