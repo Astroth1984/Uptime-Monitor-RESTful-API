@@ -246,4 +246,16 @@ server.router = {
 }
 ````
 
+## Handlers
+
+By calling a specific route, the corressponding handler will be called, and serves us what ever it's designed to do, like rendering an **HTML-Content**, or **JSON Object** or even **CSS**, **png**, **jgep** ...
+
+### JSON API Handlers
+
+This type of handlers, serve or handle Json payload, according to the called service or the queiry string filled.
+
+**_Service: api/users/_**
+
+
+
 
