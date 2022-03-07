@@ -329,6 +329,19 @@ handlers._tokens.verifyToken = function(id, phone, callback) {
 };
 ````
 
+## Building the App GUI
+
+### Page 1: Index
+### Page 2: Create An Account
+### Page 3: Create A Session
+### Page 4: Deleted Session
+### Page 5: Edit Account
+### Page 6: Deleted Account
+### Page 7: Create A Check
+### Page 8: Dashboard
+### Page 9: Edit A Check
+
+
 
 
 
