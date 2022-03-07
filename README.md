@@ -156,5 +156,5 @@ environments.testing = {
 };
 ````
 
-And to specify which Envirenment to call in run time : `NODE_ENV=<envName> node index.js`.
+And to specify which Envirenment to call while execution : `NODE_ENV=<envName> node index.js`.
 
