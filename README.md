@@ -60,3 +60,7 @@ server.httpServer.listen(config.httpPort, function() {
 
 the function `server.unifiedServer(req, res)` is the method that will handle requests and responses like parsing the Url, Stringfying the data, creating the payload objects ... etc.
 
+### Starting https Server
+
+Before creating the https server, enter the following key to create [key.pem](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/https/key.pem) and [cert.pem](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/https/cert.pem) files. Those files will serve us as Https server options or configurations for the https server
+
