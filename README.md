@@ -40,3 +40,21 @@
         <li>Using Cluster</li>
     </ul>
 </ol>
+
+## Building the RESTful API
+
+### Starting http Server
+
+The http Server is created with the http module :
+````javascript
+server.httpServer = http.createServer(function(req, res) {
+    server.unifiedServer(req, res);
+});
+````
+then we have it listen on the port 3000 :
+````javascript
+server.httpServer.listen(config.httpPort, function() {
+        console.log('\x1b[36m%s\x1b[0m', 'http server is up and running now on port ' + config.httpPort + ' in ' + config.envName + ' environment');
+    });
+````
+
