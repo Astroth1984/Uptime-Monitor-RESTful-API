@@ -254,7 +254,11 @@ By calling a specific route, the corressponding handler will be called, and serv
 
 This type of handlers, serve or handle Json payload, according to the called service or the queiry string filled.
 
-**_Service: api/users/_** [GET]
+**_Service: api/users/_** [POST]
+**_Service: api/users/_** [GET] `localhost:3000/api/users?phone=<userPhone>`
+**_Service: api/users/_** [PUT]
+**_Service: api/users/_** [DELETE] `localhost:3000/api/users?phone=<userPhone>`
+
 
 
 
