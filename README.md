@@ -64,5 +64,25 @@ the function `server.unifiedServer(req, res)` is the method that will handle req
 
 Before creating the https server, enter the following cammand : 
 `openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 keyout key.pem -out cert.pem`
-to create [key.pem](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/https/key.pem) and [cert.pem](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/https/cert.pem) files. Those files will serve us as Https server options or configurations for the https server
+to create [key.pem](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/https/key.pem) and [cert.pem](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/https/cert.pem) files. Those files will serve us as Https server options or configurations for the https server.
+
+````javascript
+server.httpsServerOptions = {
+    'key': fs.readFileSync(path.join(__dirname, '/../https/key.pem')),
+    'cert': fs.readFileSync(path.join(__dirname, '/../https/cert.pem')),
+};
+````
+Put the generated files in an object, and then inject it to server creation process like so :
+````javascript
+server.httpsServer = https.createServer(server.httpsServerOptions, function(req, res) {
+    server.unifiedServer(req, res);
+});
+````
+And then start the server, listening on port 3001
+````javascript
+server.httpsServer.listen(config.httpsPort, function() {
+        console.log('\x1b[35m%s\x1b[0m', 'https server is up and running now on port ' + config.httpsPort + ' in ' + config.envName + ' environment');
+
+    });
+````
 
