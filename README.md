@@ -263,19 +263,48 @@ This type of handlers, serve or handle Json payload, according to the called ser
 **_Service 2: api/tokens/_** [POST]
 **_Service 2: api/tokens/_** [GET] `localhost:3000/api/tokens?id=<tokenId>`
 **_Service 2: api/tokens/_** [PUT]
-**_Service 2: api/tokens/_** [DELETE] `localhost:3000/api/tokenss?id=<tokenId>`
+**_Service 2: api/tokens/_** [DELETE] `localhost:3000/api/tokens?id=<tokenId>`
 
 
-**_Service 3: api/tokens/_** [POST]
-**_Service 3: api/tokens/_** [GET] `localhost:3000/api/checks?id=<checkId>`
-**_Service 3: api/tokens/_** [PUT]
-**_Service 3: api/tokens/_** [DELETE] `localhost:3000/api/tokenss?id=<checkId>`
+**_Service 3: api/checks/_** [POST]
+**_Service 3: api/checks/_** [GET] `localhost:3000/api/checks?id=<checkId>`
+**_Service 3: api/check/_** [PUT]
+**_Service 3: api/checks/_** [DELETE] `localhost:3000/api/checks?id=<checkId>`
 
 ### HTML Handlers
 
 Those handlers render HTML-Content, and their use will be shown in **Building the App GUI**.
 
 For more details about the handlers, check the [handlers.js](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/lib/handlers.js) file.
+
+## User Token Creation & Verification
+
+To create a Token Id, we have used `createRandomString()` and assign it to _Token object_
+````javascript
+helpers.createRandomString = function(strLength) {
+    strLength = typeof(strLength) == 'number' && strLength > 0 ? strLength : false;
+    if (strLength) {
+        // Define all the possible characters that could be alphanumeric
+        var possibleCharacters = 'abcdefghijklmnopkrstuvwxyz0123456789';
+
+        // Start the final string
+        var str = '';
+        for (i = 0; i < strLength; i++) {
+            // Get random character from possibleCharacters
+            var randomChar = possibleCharacters.charAt(Math.floor(Math.random() * possibleCharacters.length));
+
+            // Append this character to the end of the string
+            str += randomChar;
+        }
+
+        // Return the final string
+        return str;
+
+    } else {
+        return false;
+    }
+}
+````
 
 
 
