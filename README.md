@@ -62,5 +62,7 @@ the function `server.unifiedServer(req, res)` is the method that will handle req
 
 ### Starting https Server
 
-Before creating the https server, enter the following key to create [key.pem](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/https/key.pem) and [cert.pem](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/https/cert.pem) files. Those files will serve us as Https server options or configurations for the https server
+Before creating the https server, enter the following cammand : 
+`openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 keyout key.pem -out cert.pem`
+to create [key.pem](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/https/key.pem) and [cert.pem](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/https/cert.pem) files. Those files will serve us as Https server options or configurations for the https server
 
