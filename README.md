@@ -377,7 +377,7 @@ debugger;
 
 ## Admin CLI
 
-Is a back-office Command Line Interface, that allows adimn to execute commands in the _Shell_ to view/edit all the data in the system. We have defined multiple commands for the admin to use, and administrate the application.
+Is a back-office Command Line Interface, that allows admin to execute commands in the _Shell_ to view/edit all the data in the system. We have defined multiple commands for the admin to use, and administrate the application.
 
 ### man/help
 ### stats
