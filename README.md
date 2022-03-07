@@ -88,8 +88,9 @@ server.httpsServer.listen(config.httpsPort, function() {
 
 ### Setting up Diffrent dev Envirenments
 
-We have defined three diffrent envirenments in [config.js](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/lib/config.js), the staging, production and testing envirenment, each one of them runs on diffrent port, to split the contexte usage of each one :
+We have defined three diffrent envirenments in [config.js](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/lib/config.js), the staging, production and testing envirenment, each one of them runs on diffrent port, to split the contexte usage of each one.
 
+<p><red>Staging Envirenment</red></p>
 ````javascript
 environments.staging = {
     'httpPort': 3000,
