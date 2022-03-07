@@ -16,28 +16,28 @@
 <ol>
     <li>Building RESTful API</li>
     <ul>
-        <li>- Starting HTTP Server</li>
-        <li>- Starting HTTPS Server</li>
-        <li>- Setting up Diffrent dev Envirenments</li>
-        <li>- Connecting To Twilio API</li>
-        <li>- Logging Data To files</li>
-        <li>- User Token Creation & Verification</li>
-        <li>- CRUD Operations</li>
+        <li> Starting HTTP Server</li>
+        <li> Starting HTTPS Server</li>
+        <li> Setting up Diffrent dev Envirenments</li>
+        <li> Connecting To Twilio API</li>
+        <li> Logging Data To files</li>
+        <li> User Token Creation & Verification</li>
+        <li> CRUD Operations</li>
     </ul>
     <li>Building the App GUI</li>
     <li>Debugging</li>
     <li>Admin CLI</li>
     <li>Gaining Stability</li>
     <ul>
-        <li>Handling Thrown Errors</li>
-        <li>Unit Tests</li>
-        <li>Integration Tests</li>
-        <li>Generating Tests Report</li>
+        <li> Handling Thrown Errors</li>
+        <li> Unit Tests</li>
+        <li> Integration Tests</li>
+        <li> Generating Tests Report</li>
     </ul>
     <li>Gaining Performance</li>
     <ul>
-        <li>Performance Hooks</li>
-        <li>Using Cluster</li>
+        <li> Performance Hooks</li>
+        <li> Using Cluster</li>
     </ul>
 </ol>
 
