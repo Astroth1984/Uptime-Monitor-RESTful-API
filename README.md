@@ -4,7 +4,7 @@
 
 ##### The Uptime Monitoring Application is developped with Node.js and the built-in libraries, with no npm dependencies, nor external APIs. This project was built using two main patterns : 
 ##### - Event Handling Paradigm
-##### - Nodeks Callback Pattern
+##### - Node.js Callback Pattern
 ##### The use cases of the project are like follow:
 
 - 1. The API listens on a PORT and accepts incoming HTTP requests for POST, GET, PUT, DELETE, and HEAD.
@@ -341,6 +341,39 @@ handlers._tokens.verifyToken = function(id, phone, callback) {
 ### Page 8: Dashboard
 ### Page 9: Edit A Check
 
+## Debugging
+
+For best and practical purposes, we have split our debugging envirenments according to the tasks we want to debug. To specify the debugging envirenment : `NODE_DEBUG=<dubugg_env> node index.js`
+
+### NODE_DEBUG=server
+
+### NODE_DEBUG=workers
+
+### index-debug.js
+
+In this file, we have point out diffrent breakpoints to log out steps, using `debugger;`. In the debugger Terminal we continue by calling `cont` to move to the next breakpoint.
+
+````javascript
+debugger;
+    setTimeout(function() {
+        cli.init();
+    }, 100);
+    debugger;
+
+    debugger;
+    var testVariable = 1;
+    console.log('Assigned testVariable');
+    debugger;
+    testVariable++;
+    console.log('IncrementtestVariable');
+    debugger;
+    testVariable = testVariable * testVariable;
+    console.log('Square testVariable');
+    debugger;
+    testVariable = testVariable.toString();
+    console.log('Converted testVariable to string');
+    debugger;
+````
 
 
 
