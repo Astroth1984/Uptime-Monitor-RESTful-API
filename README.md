@@ -15,8 +15,10 @@
 ##### Topics discussed in this project : 
 <ol>
     <li>Building RESTful API</li>
-        - Starting HTTP Server
-        - Starting HTTPS Server
+    <ul>
+        <li>- Starting HTTP Server</li>
+        <li>- Starting HTTPS Server</li>
+    </ul>
     
     <li>Ordered list element two</li>
 </ol>
