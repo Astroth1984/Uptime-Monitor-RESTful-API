@@ -254,10 +254,27 @@ By calling a specific route, the corressponding handler will be called, and serv
 
 This type of handlers, serve or handle Json payload, according to the called service or the queiry string filled.
 
-**_Service: api/users/_** [POST]
-**_Service: api/users/_** [GET] `localhost:3000/api/users?phone=<userPhone>`
-**_Service: api/users/_** [PUT]
-**_Service: api/users/_** [DELETE] `localhost:3000/api/users?phone=<userPhone>`
+**_Service 1: api/users/_** [POST]
+**_Service 1: api/users/_** [GET] `localhost:3000/api/users?phone=<userPhone>`
+**_Service 1: api/users/_** [PUT]
+**_Service 1: api/users/_** [DELETE] `localhost:3000/api/users?phone=<userPhone>`
+
+
+**_Service 2: api/tokens/_** [POST]
+**_Service 2: api/tokens/_** [GET] `localhost:3000/api/tokens?id=<tokenId>`
+**_Service 2: api/tokens/_** [PUT]
+**_Service 2: api/tokens/_** [DELETE] `localhost:3000/api/tokenss?id=<tokenId>`
+
+
+**_Service 3: api/tokens/_** [POST]
+**_Service 3: api/tokens/_** [GET] `localhost:3000/api/checks?id=<checkId>`
+**_Service 3: api/tokens/_** [PUT]
+**_Service 3: api/tokens/_** [DELETE] `localhost:3000/api/tokenss?id=<checkId>`
+
+### HTML Handlers
+
+Those handlers render HTML-Content, and their use will be shown in **Building the App GUI**.
+
 
 
 
