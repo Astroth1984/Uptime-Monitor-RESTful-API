@@ -58,3 +58,5 @@ server.httpServer.listen(config.httpPort, function() {
     });
 ````
 
+the function `server.unifiedServer(req, res)` is the method that will handle requests and responses like parsing the Url, Stringfying the data, creating the payload objects ...
+
