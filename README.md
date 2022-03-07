@@ -90,7 +90,7 @@ server.httpsServer.listen(config.httpsPort, function() {
 
 We have defined three diffrent envirenments in [config.js](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/lib/config.js), the staging, production and testing envirenment, each one of them runs on diffrent port, to split the contexte usage of each one.
 
-<p><red>Staging Envirenment</red></p>
+_Staging Envirenment_
 ````javascript
 environments.staging = {
     'httpPort': 3000,
@@ -111,4 +111,50 @@ environments.staging = {
     }
 };
 ````
+
+_Production Envirenment_
+````javascript
+environments.production = {
+    'httpPort': 5000,
+    'httpsPort': 5001,
+    'envName': 'production',
+    'hashingSecret': 'thisIsAlsoASecret',
+    'maxChecks': 5,
+    'twilio': {
+        'accountSid': '',
+        'authToken': '',
+        'fromPhone': ''
+    },
+    'templateGlobals': {
+        'appName': 'UptimeChecker',
+        'companyName': 'Astroth1984-Company, Inc.',
+        'yearCreated': '2022',
+        'baseUrl': 'http://localhost:5000/'
+    }
+};
+````
+
+_Testing Envirenment_
+````javascript
+environments.testing = {
+    'httpPort': 4000,
+    'httpsPort': 4001,
+    'envName': 'testing',
+    'hashingSecret': 'thisIsAlsoASecret',
+    'maxChecks': 5,
+    'twilio': {
+        'accountSid': '',
+        'authToken': '',
+        'fromPhone': ''
+    },
+    'templateGlobals': {
+        'appName': 'UptimeChecker',
+        'companyName': 'Astroth1984-Company, Inc.',
+        'yearCreated': '2022',
+        'baseUrl': 'http://localhost:5000/'
+    }
+};
+````
+
+And to specify which Envirenment to call in run time : `NODE_ENV=<envName> node index.js`.
 
