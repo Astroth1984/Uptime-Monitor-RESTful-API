@@ -375,6 +375,19 @@ debugger;
     debugger;
 ````
 
+## Admin CLI
+
+Is a back-office Command Line Interface, that allows adimn to execute commands in the _Shell_ to view/edit all the data in the system. We have defined multiple commands for the admin to use, and administrate the application.
+
+### man/help
+### stats
+### list users
+### more info user --{userId}
+### list checks / list checks --up --down
+### more check info --{checkId}
+### list logs
+### more log info --{logFileName}
+
 
 
 
