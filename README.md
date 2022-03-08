@@ -88,6 +88,7 @@ server.httpsServer.listen(config.httpsPort, function() {
 
     });
 ````
+![servers](images/start_servers.PNG)
 
 ### Setting up Diffrent dev Envirenments
 
