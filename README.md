@@ -162,6 +162,8 @@ environments.testing = {
 
 And to specify which Envirenment to call while execution : `NODE_ENV=<envName> node index.js`.
 
+![production](images/production_env.PNG)
+
 ## Connecting to Twilio API
 
 Within the [helpers.js]() file, we have create `sendToTwilioSms()` function that sends SMS to clients via Twilio, by also using the keys set up for Twilio configuration in `config.js`:
@@ -259,9 +261,16 @@ By calling a specific route, the corressponding handler will be called, and serv
 This type of handlers, serve or handle Json payload, according to the called service or the queiry string filled.
 
 **_Service 1: api/users/_** [POST]
+![users post](images/POST_users.PNG)
+
 **_Service 1: api/users/_** [GET] `localhost:3000/api/users?phone=<userPhone>`
+![users get](images/GET_users.PNG)
+
 **_Service 1: api/users/_** [PUT]
+![users put](images/PUT_users.PNG)
+
 **_Service 1: api/users/_** [DELETE] `localhost:3000/api/users?phone=<userPhone>`
+![users delete](images/DELETE_users.PNG)
 
 
 **_Service 2: api/tokens/_** [POST]
