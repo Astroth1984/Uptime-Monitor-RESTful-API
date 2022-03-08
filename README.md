@@ -478,5 +478,8 @@ app.init = function(callback) {
     }
 };
 ````
+As shown in the code above, the hadnling of reaquests `server.init()` is spread on the number of CPUs in the system, while the **ADMIN CLI** and the **Background Workers** are running only once on one CPU thanks to `cluster.isMaster`, and obviously we have to fork the cluster so that the else block is executed .
+
+_Cluster Outputs_
 
 
