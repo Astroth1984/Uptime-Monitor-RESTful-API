@@ -419,7 +419,7 @@ Those kind of test are located in the [api.js](https://github.com/Astroth1984/Up
 - /api/users should respond to GET with 400 status code
 - random path should respond to GET with 404 status code
 
-### Generating Tests Report
+### Generating Tests Repport
 
 When the Test Runner exists, we get a final repport and more details about the tests that we have created:
 
@@ -428,5 +428,33 @@ When the Test Runner exists, we get a final repport and more details about the t
 - Tests passed : shown in green.
 - Details about the failed Tests by indecating the issue.
 
+## Gaining Performance
+
+### Performance Hooks
+
+It's a way to benchmark our code and to time the execution of diffrent procedures. For that we did plenty of performance tests to check out the duration of execution of multiple block on our code. For that main purpose we have used the Node.js Built-in library [Performance Hooks](https://nodejs.org/api/perf_hooks.html) like so : `var _performance = require('perf_hooks').performance;`.
+
+As an exapmle we measured the performance of **Creating a Session** or the POST handler for creating a token.
+The benchmarking we've used is : 
+````javascript
+_performance.mark('entered function');
+````
+And we give a name to the performance mark, and to gather all the measurmants :
+````javascript
+ _performance.measure('Beginning to end', 'entered function', 'storing token complete');
+ _performance.measure('Validating user inputs', 'entered function', 'inputs validated');
+ _performance.measure('User lookup', 'beginning user lookup', 'user lookup complete');
+ _performance.measure('Password hashing', 'beginning password hashing', 'password hashing complete');
+ _performance.measure('Token data creation', 'creating data for token', 'beginning storing token');
+ _performance.measure('Token storing', 'beginning storing token', 'storing token complete');
+````
+Finally to render the outputs, we used 
+````javascript
+// Log out all the measurements 
+var measurements = _performance.getEntriesByType('measure');
+measurements.forEach(function(measurement) {
+      debug('\x1b[36m%s\x1b[0m', measurement.name + ' : ' + measurement.duration + ' ms');
+});
+````
 
 
