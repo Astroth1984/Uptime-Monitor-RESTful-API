@@ -389,6 +389,23 @@ Is a back-office Command Line Interface,developped using event-handling-paradigm
 ### more log info --{logFileName}
 
 
+## Gaining Stability
+
+In this main section, we have followed some best practices in wokring with node.js to make our code bullet-proof, and keep our thread alive even if it countered errors during the execution, such as : 
+ - Creating, using, and catching thrown errors.
+ - Advanced use of the debugger.
+ - Using "strict" flag to lint our code.
+ - Adding a test runner, unit test, and integration tests.
+
+To verify, check and validate our created tests, we make use of a great Node.js built-in library called [assert](https://nodejs.org/api/assert.html), afterwards we send the script to the [Test Runner](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/test/index.js) in the test folder, which will log out the test results on the console.
+
+By calling the test folder we have overrided the NODE_ENV to be automatically the _testing envirenment_ : `process.env.NODE_ENV = 'testing';`
+
+### Unit Tests
+
+We have create some of our own unit tests in [unit.js](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/test/unit.js) folder, 
+
+
 
 
 
