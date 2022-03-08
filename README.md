@@ -273,16 +273,34 @@ This type of handlers, serve or handle Json payload, according to the called ser
 ![users delete](images/DELETE_users.PNG)
 
 
+
+
 **_Service 2: api/tokens/_** [POST]
+![tokens post](images/POST_tokens.PNG)
+
 **_Service 2: api/tokens/_** [GET] `localhost:3000/api/tokens?id=<tokenId>`
+![tokens get](images/GET_tokens.PNG)
+
 **_Service 2: api/tokens/_** [PUT]
+![tokens put](images/PUT_tokens.PNG)
+
 **_Service 2: api/tokens/_** [DELETE] `localhost:3000/api/tokens?id=<tokenId>`
+![tokens delete](images/DELETE_tokens.PNG)
+
+
 
 
 **_Service 3: api/checks/_** [POST]
+![checks post](images/POST_checks.PNG)
+
 **_Service 3: api/checks/_** [GET] `localhost:3000/api/checks?id=<checkId>`
+![checks get](images/GET_checks.PNG)
+
 **_Service 3: api/check/_** [PUT]
+![checks put](images/PUT_checks.PNG)
+
 **_Service 3: api/checks/_** [DELETE] `localhost:3000/api/checks?id=<checkId>`
+![checks delete](images/DELETE_checks.PNG)
 
 ### HTML Handlers
 
