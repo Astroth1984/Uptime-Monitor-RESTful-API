@@ -397,16 +397,36 @@ In this main section, we have followed some best practices in wokring with node.
  - Using "strict" flag to lint our code.
  - Adding a test runner, unit test, and integration tests.
 
-To verify, check and validate our created tests, we make use of a great Node.js built-in library called [assert](https://nodejs.org/api/assert.html), afterwards we send the script to the [Test Runner](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/test/index.js) in the test folder, which will log out the test results on the console.
+To verify, check and validate our created tests, we make use of a powerful Node.js built-in library called [assert](https://nodejs.org/api/assert.html), afterwards we send the script to the [Test Runner](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/test/index.js) in the test folder, which will log out the test results on the console.
 
 By calling the test folder we have overrided the NODE_ENV to be automatically the _testing envirenment_ : `process.env.NODE_ENV = 'testing';`
 
 ### Unit Tests
 
-We have create some of our own unit tests in [unit.js](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/test/unit.js) folder, 
+We have create some of our own unit tests in [unit.js](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/test/unit.js) file:
 
+- logs.list should callback a false error and an array of log names
+- helpers.getANumber should return 6.
+- logs.truncate should not throw an error if logId does not exist. it should callback an err instead.
+- exampleDebuggingProblem.init() should not throw when called.
 
+### Integration Tests
 
+Those kind of test are located in the [api.js](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/test/api.js) file. Where we have identified the output of some requests that we are willing to acheive or expect:
+
+- app.init should start without throwing
+- /ping should respond to GET with 200 status code
+- /api/users should respond to GET with 400 status code
+- random path should respond to GET with 404 status code
+
+### Generating Tests Report
+
+When the Test Runner exists, we get a final repport and more details about the tests that we have created:
+
+- Total Tests.
+- Tests failed : shown in red.
+- Tests passed : shown in green.
+- Details about the failed Tests by indecating the issue.
 
 
 
