@@ -583,3 +583,38 @@ _Cluster Outputs_
 ![cluster](images/cluster.PNG)
 
 
+## Node Js Modules used 
+
+- Assertion testing
+- Asynk hooks
+- Buffer
+- Child processes
+- Cluster
+- Crypto
+- Debugger
+- DNS
+- Errors
+- Events
+- File system
+- Globals
+- HTTP
+- HTTPS
+- HTTP2
+- Net
+- OS
+- Path
+- Performance hooks
+- Process
+- Query strings
+- Readline
+- REPL
+- Stream
+- String decoder
+- UDP/Datagram
+- URL
+- Utilities
+- V8
+- VM
+- Zlib
+
+
