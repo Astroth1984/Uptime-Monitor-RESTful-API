@@ -364,7 +364,7 @@ handlers._tokens.verifyToken = function(id, phone, callback) {
 
 
 ### Page 2: Create An Account
-![create account](images/create_an_account.png)
+![create account](images/create_an_accout.png)
 
 
 ### Page 3: Create A Session
@@ -372,7 +372,7 @@ handlers._tokens.verifyToken = function(id, phone, callback) {
 
 
 ### Page 4: Deleted Session
-![delete session](images/deleted_session.png)
+![delete session](images/deleted-session.png)
 
 
 ### Page 5: Edit Account
