@@ -580,4 +580,6 @@ As shown in the code above, the hadnling of reaquests `server.init()` is spread 
 
 _Cluster Outputs_
 
+![cluster](images/cluster.PNG)
+
 
