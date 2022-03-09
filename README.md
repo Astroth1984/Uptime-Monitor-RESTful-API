@@ -554,7 +554,7 @@ measurements.forEach(function(measurement) {
 ````
 _Performance Outputs: _
 
-![performance](performance.PNG)
+![performance](images/performance.PNG)
 
 ### Cluster
 
