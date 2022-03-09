@@ -443,13 +443,41 @@ Note that if we run the file using `node index-debug.js` it will throw an error 
 Is a back-office Command Line Interface,developped using event-handling-paradigm that allows admin to execute commands in the _Shell_ to view/edit all the data in the system. We have defined multiple commands for the admin to use, and administrate the application.
 
 ### man/help
+![man](images/man.PNG)
+
+
 ### stats
+![stats](images/stats.PNG)
+
+
 ### list users
+![list users](images/list_users.PNG)
+
+
 ### more info user --{userId}
+![userId](images/more_user_info.PNG)
+
+
 ### list checks / list checks --up --down
+
+List of checks with status up are in green, and the ones with status down are in red. We have also narrow the results by specifying the type of checks we looking for by adding the flag **--up** or **--down--** to the command
+
+![list checks](images/list_checks.PNG)
+
+
 ### more check info --{checkId}
+![check info](images/more_check_info.PNG)
+
+
 ### list logs
+![list](images/list_logs.PNG)
+
+
 ### more log info --{logFileName}
+
+By running the command, if the user is calling a compressed log, the backgrownd workers will decompress the _zip_ and log the results.
+
+![more log info](images/more_log_info.PNG)
 
 
 ## Gaining Stability
