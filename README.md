@@ -554,6 +554,8 @@ measurements.forEach(function(measurement) {
 ````
 _Performance Outputs: _
 
+![performance](performance.PNG)
+
 ### Cluster
 
 Node.js Cluster Module is used to spread the work of our application across all the CPUs available on whatever system the application is running on. To call this module we are obliged to do some major changes on the index.js file, and so we can keep track of the changes, we have duprecated the index.js in [index-cluster.js](https://github.com/Astroth1984/Uptime-Monitor-RESTful-API/blob/master/index-cluster.js) file, and log out the changes.
