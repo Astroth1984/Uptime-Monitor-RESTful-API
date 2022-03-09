@@ -510,6 +510,8 @@ Those kind of test are located in the [api.js](https://github.com/Astroth1984/Up
 - /api/users should respond to GET with 400 status code
 - random path should respond to GET with 404 status code
 
+![test](images/tests.PNG)
+
 ### Generating Tests Repport
 
 When the Test Runner exists, we get a final repport and more details about the tests that we have created:
@@ -518,6 +520,9 @@ When the Test Runner exists, we get a final repport and more details about the t
 - Tests failed : shown in red.
 - Tests passed : shown in green.
 - Details about the failed Tests by indecating the issue.
+
+![test](images/test_repport.PNG)
+
 
 ## Gaining Performance
 
