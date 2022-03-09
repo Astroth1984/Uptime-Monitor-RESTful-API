@@ -360,14 +360,41 @@ handlers._tokens.verifyToken = function(id, phone, callback) {
 ## Building the App GUI
 
 ### Page 1: Index
+![index](images/index.PNG)
+
+
 ### Page 2: Create An Account
+![create account](images/create_an_account.png)
+
+
 ### Page 3: Create A Session
+![create session](images/create_session.PNG)
+
+
 ### Page 4: Deleted Session
+![delete session](images/deleted_session.png)
+
+
 ### Page 5: Edit Account
+![edit account](images/edit_account.png)
+
+
 ### Page 6: Deleted Account
+![delete account](images/delete_account.png)
+
+
 ### Page 7: Create A Check
+![create check](images/create_check.png)
+
+
 ### Page 8: Dashboard
+![dashboard](images/dashboard.png)
+
+
 ### Page 9: Edit A Check
+![edit check](images/edit_check.png)
+
+
 
 ## Debugging
 
