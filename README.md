@@ -402,9 +402,15 @@ For best and practical purposes, we have split our debugging envirenments accord
 
 ### NODE_DEBUG=server
 
+![server](images/debug_server.PNG)
+
 ### NODE_DEBUG=workers
 
+![workers](images/debug_workers.PNG)
+
 ### index-debug.js
+
+![index-debug](images/debug_inspect.PNG)
 
 In this file, we have point out diffrent breakpoints to log out steps, using `debugger;`. In the debugger Terminal we continue by calling `cont` to move to the next breakpoint.
 
