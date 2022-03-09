@@ -410,8 +410,6 @@ For best and practical purposes, we have split our debugging envirenments accord
 
 ### index-debug.js
 
-![index-debug](images/debug_inspect.PNG)
-
 In this file, we have point out diffrent breakpoints to log out steps, using `debugger;`. In the debugger Terminal we continue by calling `cont` to move to the next breakpoint.
 
 ````javascript
@@ -437,6 +435,8 @@ debugger;
 ````
 
 Note that if we run the file using `node index-debug.js` it will throw an error and kill the process, because ` exampleDebuggingProblem.init();` uses an undefined variable. So to debugge the file line by line we run instead : `node inspect index-debug.js`
+
+![index-debug](images/debug_inspect.PNG)
 
 ## Admin CLI
 
