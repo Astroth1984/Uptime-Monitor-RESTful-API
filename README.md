@@ -430,6 +430,8 @@ debugger;
     debugger;
 ````
 
+Note that if we run the file using `node index-debug.js` it will throw an error and kill the process, because ` exampleDebuggingProblem.init();` uses an undefined variable. So to debugge the file line by line we run instead : `node inspect index-debug.js`
+
 ## Admin CLI
 
 Is a back-office Command Line Interface,developped using event-handling-paradigm that allows admin to execute commands in the _Shell_ to view/edit all the data in the system. We have defined multiple commands for the admin to use, and administrate the application.
